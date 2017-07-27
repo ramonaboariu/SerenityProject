@@ -1,5 +1,6 @@
 package com.madison.utils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -8,5 +9,7 @@ import java.util.List;
 public class Constants {
 
    public static String productName;
-   public static List<String> listaproduse;
+
+   public static List<String> listaproduse = new ArrayList<>();
+   public static List<String> listaprodcompare = new ArrayList<>();
 }

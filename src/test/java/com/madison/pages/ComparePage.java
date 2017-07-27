@@ -12,25 +12,24 @@ import java.util.*;
 /**
  * Created by ramonaboariu on 7/26/2017.
  */
+
+
 public class ComparePage extends PageObject {
 
-    @FindBy(css = "h2")
-    public List<WebElement> nameFromCompare;
+    @FindBy(css = "h2.product-name a")
+    private List<WebElement> nameFromCompare;
 
 
-    public List<String> getNameFromCompare() {
-        List<String> nameOfProducts = new ArrayList<>();
-
-
+    public void addNameFromCompare() {
+        System.err.println("SIZE: " +nameFromCompare.size() );
         for (int i = 0; i < nameFromCompare.size(); i++) {
 
-            nameOfProducts.add(nameFromCompare.get(i).getText().toLowerCase());
+            Constants.listaprodcompare.add(nameFromCompare.get(i).getText().toLowerCase());
+            System.out.println("Lista Produse din Compare List" + Constants.listaprodcompare);
 
         }
-
-        System.out.println( "Sirul din compare:" +nameOfProducts);
-
-return nameOfProducts;
-
     }
 }
+
+
+

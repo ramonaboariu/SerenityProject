@@ -35,13 +35,16 @@ public class MadisonTest {
     public void madisonHome() {
 
         madisonSteps.navigateTo("http://qa2.madison.com/");
+
         madisonSteps.addProductsToCompareList();
+
         madisonSteps.addProductsToCompareList();
+
         madisonSteps.clickBack();
         madisonSteps.clickBack();
         madisonSteps.clickOnCompareButton();
-        madisonSteps.getNameFromProductPage();
         madisonSteps.getNameFromCompare();
+        madisonSteps.getNamesFromCompare();
 
     }
 

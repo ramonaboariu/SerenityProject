@@ -7,6 +7,7 @@ import com.madison.pages.ProductsViewPage;
 import com.madison.utils.Constants;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
+import net.thucydides.core.steps.ScenarioSteps;
 import org.apache.commons.collections.CollectionUtils;
 import org.junit.Assert;
 
@@ -17,7 +18,7 @@ import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getDriver
 /**
  * Created by ramonaboariu on 7/26/2017.
  */
-public class MadisonSteps {
+public class MadisonSteps extends ScenarioSteps {
 
     MadisonHomePage madisonHomePage;
     MadisonHomePage madisonHomePageMenu;
@@ -61,7 +62,9 @@ public class MadisonSteps {
 
         redirectToRandomProductsSubMenu(redirectToRandomProductsPage());
         getRandomProduct();
+        getNameFromProductPage();
         clickOnAddToCompare();
+
     }
 
     @Step
@@ -75,18 +78,22 @@ public class MadisonSteps {
     }
 
     @Step
-    public void getNameFromCompare() {
-        //List<String> names = productsViewPage.getAllnames();
+    public void getNamesFromCompare() {
 
+        System.out.println("lista: "+Constants.listaproduse);
+        System.out.println("prodcompare: "+Constants.listaprodcompare);
+        Assert.assertTrue(CollectionUtils.isEqualCollection(Constants.listaproduse, Constants.listaprodcompare));
 
-        System.out.println(CollectionUtils.isEqualCollection(Constants.listaproduse, nameofProducts));
-
-
-        //Assert.assertTrue(comparePage.getNameFromCompare().contains(productsViewPage.getNameFromProductPage()));
     }
 
     @Step
-    public void getNameFromProductPage(){
-        productsViewPage.getNameFromProductPage();
+    public String  getNameFromProductPage(){
+        return productsViewPage.getNameFromProductPage();
+    }
+
+    @Step
+    public void getNameFromCompare()
+    {
+        comparePage.addNameFromCompare();
     }
 }

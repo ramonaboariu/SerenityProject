@@ -27,7 +27,7 @@ public class ProductsPage extends PageObject {
         int size = products.size();
         Random rand = new Random();
         waitFor(products.get(size - 1));
-        System.out.println(products.size());// pt size de lista
+        System.out.println( products.size());// pt size de lista
         int randomProduct1 = rand.nextInt(size-1);
         System.out.println("The product submenu item is " + products.get(randomProduct1).getText());
         products.get(randomProduct1).click();
@@ -39,7 +39,6 @@ public class ProductsPage extends PageObject {
         waitFor(compare);
         compare.click();
         String initial = switchToNewestOpenedTab();
-        getDriver().switchTo().window(initial);
 
     }
 

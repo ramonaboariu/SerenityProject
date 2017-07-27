@@ -30,7 +30,7 @@ public class MadisonHomePage extends PageObject {
     public int redirectToRandomProductsMenu() {
 
         Random rand = new Random();
-        System.out.println(productsmenu.size());// pt size de lista
+        System.out.println("Numarul elementelor din menu:" +productsmenu.size());// pt size de lista
         int randomProductsMenu = rand.nextInt(productsmenu.size() - 1);
         System.out.println("The product menu item is " + productsmenu.get(randomProductsMenu).getText());
         productsmenu.get(randomProductsMenu).click();
@@ -49,7 +49,7 @@ public class MadisonHomePage extends PageObject {
 
 if (randomProductsMenu<4) {
     Random rand = new Random();
-    System.out.println(productsubmenu.size());// pt size de lista
+    System.out.println("Numarul elementelor din submenu sunt:" +productsubmenu.size());
     int randomProductsSubMenu = rand.nextInt(productsubmenu.size() - 1);
     System.out.println("The product submenu item is " + productsubmenu.get(randomProductsSubMenu).getText());
     productsubmenu.get(randomProductsSubMenu).click();
